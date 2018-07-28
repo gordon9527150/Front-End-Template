@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.css" />
+		<script src="public/js/jquery-3.2.1.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/holder.min.js"></script>
+	</head>
+	<body>
+		<h2>创建模态框（Modal）</h2>
+		<!-- 按钮触发模态框 -->
+		<button class="btn btn-info btn-group-vertical" data-toggle="modal" data-target="#myModal">
+			<span style="font-size: 100px;">开始演示模态框</span>
+		</button>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+		            </div>
+		            <div class="modal-body">在这里添加一些文本</div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		                <button type="button" class="btn btn-primary">提交更改</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>注册-CSTA计算机科技协会</title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#test").hide();
+  });
+});
+</script>
+</head>
+
+<body>
+<h2>This is a heading</h2>
+<p>This is a paragraph.</p>
+<p id="test" style="margin-right: 100px; float: right;">This is another paragraph.</p>
+<button type="button">Click me</button>
+</body>
+</html>

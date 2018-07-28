@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Insert_Title_Here</title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/holder.min.js"></script>
+		<link href="public/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="public/bootstrap/js/bootstrap-select.js"></script>
+		<script src="public/js/myjs.js"></script>
+		<link href="easyui/themes/default/easyui.css" />
+		<script src="easyui/jquery.easyui.min.js"></script>
+	</head>
+	<style>
+		*{
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+		}
+		.sign-up-top{
+		    height:65px;
+		    box-shadow:2px 3px 10px #e4e4e4;
+		    border-bottom:1px solid\9;
+		}
+		.sign-up-down{
+			width:100%;
+			background-color: #DDDDDD;
+			text-align: center;
+		    height:60px;
+		    border-radius:10px;
+		    border-top-right-radius:10px;
+		}
+		.login-title{
+			padding-left: 30%;
+		    font-size:28px;
+		    color:#337AB7;
+		    margin-top: 20px;
+		    margin-bottom: 5px;
+		}
+		.form-group{
+			margin-top: 20px;
+			position: relative;
+		}
+		.form-line-up{
+			margin: 0px;
+			padding: 0px;
+		    height:8px;
+		    background:#337AB7;
+		    width:100%;
+		    border-top-left-radius:4px;
+		    border-top-right-radius:4px
+		}
+		.row{
+			margin-right: 0px;
+ 			margin-left: 0px;
+		}
+		.panel{
+			margin-top: 30px;
+			margin-bottom: 50px;
+		}
+		.error{
+			font-size:20px;
+			color:red;
+			text-align:center;
+		}
+		.myborder{
+			border:0.5px solid  #000;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		th, td{
+			text-align: center;
+		}
+		#class-scores th, td{
+			width: 14.2%;
+		}
+		.selectspan1{
+			line-height: 34px; 
+			font-size: 18px; 
+			vertical-align: middle;
+		}
+		.selectspan2{
+			line-height: 34px; 
+			vertical-align: middle;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		
+	</script>
+	<body>
+		<!--顶部效果-->
+		<div class="sign-up-top">
+			<div class="container" style="margin-top: 10px;">
+				<div style="vertical-align:middle; font-size:28px;">
+					<a href="#" style="text-decoration: none;">
+							<img src="holder.js/60x60" style="vertical-align:middle; height: 56px; border-radius: 50%;"/>
+							<span style="letter-spacing: 2px;">学院成绩查询系统</span>
+					</a>
+					<div style="float: right; margin-top: 10px;">
+						<h4><a href="#">登录</a>
+							&nbsp;&nbsp;&nbsp;<a href="#">注册</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		
+		
+		<div class="container">
+			<span class="glyphicon glyphicon-font"  style="font-size: 30px;">
+				<div style="float: right;">&nbsp;&nbsp;&nbsp;：个人信息</div>
+			</span>
+			<div style="background: white; height: 13px;"></div>
+			<table class="table table-bordered" style="width: 90%; margin: 0 auto; font-size: 17px;">
+				<thead>
+					<tr>
+						<td>姓名：</td>
+						<td>詹金浩</td>
+						<td>学号：</td>
+						<td>160341237</td>
+					</tr>
+					<tr>
+						<td>专业：</td>
+						<td>计算机科学与技术</td>
+						<td>绩点：</td>
+						<td>4.04</td>
+					</tr>
+				</thead>
+			</table>
+			
+			<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 30px; "></div>
+				<div class="col-md-6" style="padding: 0; margin-top: 0px; margin-bottom: 10px;">
+					<span class="glyphicon glyphicon-bold"  style="font-size: 30px; margin-top: 20px;">
+						<div style="float: right;">&nbsp;&nbsp;&nbsp;：各科成绩</div>
+					</span>
+				</div>
+			</span>
+			<br />
+			<div class="container" style="width: 90%;">
+				<div class="col-md-11">
+					<div class="col-md-4">
+						<span class="selectspan1">学期：</span>
+						<span class="selectspan2"><select class="selectpicker" data-width="60%" data-size="5">
+						　　　<option>请选择</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+						</select></span>
+					</div>
+					<div class="col-md-4">
+						<span class="selectspan1">类别：</span>
+						<span class="selectspan2"><select class="selectpicker" style="margin-top: 0px; padding-top: 0px;" data-width="60%" data-size="5">
+						　　　<option>请选择</option>
+							<option>必修</option>
+						　　　<option>专选</option>
+						　　　<option>公选</option>
+						</select></span>
+					</div>
+					<div class="col-md-4">
+						<span class="selectspan1">通过：</span>
+						<span class="selectspan2"><select class="selectpicker" data-width="60%" data-size="5">
+						　　　<option>请选择</option>
+							<option>是</option>
+						　　　<option>否</option>
+						</select></span>
+					</div>
+				</div>
+				<div class="col-md-1">
+					<button class="btn btn-primary" type="submit" style="margin-right: 0px;">查询</button>
+				</div>
+			</div>
+			<br />
+			<table class="table table-bordered" style="width: 90%; margin: 0 auto;" id="class-scores">
+				<thead>
+					<tr>
+						<th>课程名称</th>
+						<th>任课教师</th>
+						<th>课程类别</th>
+						<th>成绩</th>
+						<th>重要系数</th>
+						<th>单科绩点</th>
+						<th>学分</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Anna</td>
+						<td>aa</td>
+						<td>bb</td>
+						<td>cc</td>
+						<td>dd</td>
+						<td>dd</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Anna</td>
+						<td>aa</td>
+						<td>bb</td>
+						<td>cc</td>
+						<td>dd</td>
+						<td>dd</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Anna</td>
+						<td>aa</td>
+						<td>bb</td>
+						<td>cc</td>
+						<td>dd</td>
+						<td>dd</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Anna</td>
+						<td>aa</td>
+						<td>bb</td>
+						<td>cc</td>
+						<td>dd</td>
+						<td>dd</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Anna</td>
+						<td>aa</td>
+						<td>bb</td>
+						<td>cc</td>
+						<td>dd</td>
+						<td>dd</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="container" style="width: 90%; margin-top: 30px;text-align: center;font-size: 20px;">
+				<div class="col-md-3">
+					应修学分：170
+				</div>
+				<div class="col-md-3">
+					已修学分：100
+				</div>
+				<div class="col-md-3">
+					需再修学分：70
+				</div>
+				<div class="col-md-3">
+					<button class="btn btn-default" type="submit" style="margin-right: 0px;">下载成绩单</button>
+				</div>
+			</div>
+		</div>
+		<!--底部效果-->
+		<div class="sign-up-down">
+			<h4 style="line-height: 50px;">Copyright ©️ 2018 - Java & Java Web培训 </h4>
+		</div>
+		<script>
+		</script>
+	</body>
+</html>
+
+
+

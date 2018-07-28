@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Insert_Title_Here</title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/holder.min.js"></script>
+		<link href="public/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="public/bootstrap/js/bootstrap-select.js"></script>
+		<script src="public/js/myjs.js"></script>
+		<link rel="stylesheet" type="text/css" href="public/fileup/fileinput.min.css">
+		<script src="public/fileup/fileinput.min.js"></script>
+		<script src="public/fileup/zh.js"></script>
+		<script src="public/js/xlsx.core.min.js"></script>
+		<script src="public/js/Blob.js"></script>
+		<script src="public/js/FileSaver.min.js"></script>
+		<script src="public/js/tableexport.js"></script>
+	</head>
+	<style>
+		*{
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+		}
+		li{
+			width: 22%;
+			text-align: center;
+		}
+		.sign-up-top{
+		    height:65px;
+		    box-shadow:2px 3px 10px #e4e4e4;
+		    border-bottom:1px solid\9;
+		}
+		.sign-up-down{
+			width:100%;
+			background-color: #DDDDDD;
+			text-align: center;
+		    height:60px;
+		    border-radius:10px;
+		    border-top-right-radius:10px;
+		}
+		.login-title{
+			padding-left: 30%;
+		    font-size:28px;
+		    color:#337AB7;
+		    margin-top: 20px;
+		    margin-bottom: 5px;
+		}
+		.form-group{
+			margin-top: 20px;
+			position: relative;
+		}
+		.form-line-up{
+			margin: 0px;
+			padding: 0px;
+		    height:8px;
+		    background:#337AB7;
+		    width:100%;
+		    border-top-left-radius:4px;
+		    border-top-right-radius:4px
+		}
+		.row{
+			margin-right: 0px;
+ 			margin-left: 0px;
+		}
+		.panel{
+			margin-top: 30px;
+			margin-bottom: 50px;
+		}
+		.error{
+			font-size:20px;
+			color:red;
+			text-align:center;
+		}
+		.myborder{
+			border:0.5px solid  #000;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		th, td{
+			text-align: center;
+		}
+		#cs-major td, #is-major td{
+			width: 25%;
+		}
+		#cs-scores td, #is-scores td{
+			width: 20%;
+		}
+		.selectspan1{
+			line-height: 34px; 
+			font-size: 18px; 
+			vertical-align: middle;
+		}
+		.selectspan2{
+			line-height: 34px; 
+			vertical-align: middle;
+		}
+		.file-drop-zone{
+			height: 300px;
+		}
+		.mycontainer{
+			margin-top: 20px;
+			padding-right: 5px;
+			padding-left: 5px;
+			margin-right: 10px;
+			margin-left: 10px;
+			height: auto;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function ExportCs(){
+			$('#cs-scores').tableExport({
+				filename: "成绩单",
+				bootstrap:'true', 
+				formats: ['xlsx'],
+				escape:'true',
+				trimWhitespace: true
+			});
+			var Table=document.getElementById("cs-scores");
+			var instance = TableExport(Table);
+			instance.remove();
+		}
+		function ExportIs(){
+			$('#is-scores').tableExport({
+				filename: "成绩单",
+				bootstrap:'true', 
+				formats: ['xlsx'],
+				escape:'true',
+				trimWhitespace: true
+			});
+			var Table=document.getElementById("is-scores");
+			var instance = TableExport(Table);
+			instance.remove();
+		}
+		
+	</script>
+	<body background="">
+		<!--顶部效果-->
+		<div class="sign-up-top">
+			<div class="mycontainer" style="margin-top: 10px;">
+				<div style="vertical-align:middle; font-size:28px;">
+					<a href="#" style="text-decoration: none;">
+							<img src="holder.js/60x60" style="vertical-align:middle; height: 56px; border-radius: 50%;"/>
+							<span style="letter-spacing: 2px;">学院成绩查询系统</span>
+					</a>
+					<div style="float: right; margin-top: 10px;">
+						<h4><a href="#">登录</a>
+							&nbsp;&nbsp;&nbsp;<a href="#">注册</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+			<div class="container">
+				<div class="container" style="margin: 0px;">
+					<div class="col-md-9" style="margin-top: 7px;  font-size: 20px;">
+						<ul id="myTab" class="nav nav-tabs">
+							<li class="in active">
+								<a href="#csSearchInfo" data-toggle="tab">计科成绩查询</a>
+							</li><li>
+								<a href="#isSearchInfo" data-toggle="tab">信安成绩查询</a>
+							</li><li>
+								<a href="#loginStudentInfo" data-toggle="tab">学生信息录入</a>
+							</li><li>
+								<a href="#loginScoreInfo" data-toggle="tab">学生成绩录入</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="myTabContent" class="tab-content" style="margin-top: 20px;">
+					<div class="tab-pane fade in active" id="csSearchInfo">
+						<div class="container">
+							<span class="glyphicon glyphicon-font"  style="font-size: 30px;">
+								<div style="float: right;">&nbsp;&nbsp;&nbsp;：专业信息</div>
+							</span>
+							<div style="background: white; height: 13px;"></div>
+							<table class="table table-bordered" style="width: 90%; margin: 0 auto; font-size: 17px;" id="cs-major">
+								<thead>
+									<tr>
+										<td>专业</td>
+										<td>计算机科学与技术</td>
+										<td>GPA</td>
+										<td>3.3</td>
+									</tr>
+									<tr>
+										<td>挂科门次</td>
+										<td>110</td>
+										<td>挂科率</td>
+										<td>0.3</td>
+									</tr>
+									<tr>
+										<td>竞赛人次</td>
+										<td>20</td>
+										<td>项目人次</td>
+										<td>40</td>
+									</tr>
+								</thead>
+							</table>
+							<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 30px; "></div>
+								<div class="col-md-12" style="padding: 0; margin-top: 0px; margin-bottom: 10px;">
+									<span class="glyphicon glyphicon-bold"  style="font-size: 30px; margin-top: 20px;">
+										<div style="float: right;">&nbsp;&nbsp;&nbsp;：各班成绩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<button class="btn btn-primary" onclick="ExportCs();">下载成绩单</button>
+										</div>
+									</span>
+								</div>
+							<table id="cs-scores" class="table table-bordered" style="width: 90%; margin: 0 auto;" tableexport-key="classScore">
+								<thead>
+									<tr>
+										<th>班级</th>
+										<th>班长</th>
+										<th>GPA</th>
+										<th>挂科门次</th>
+										<th>挂科率</th>
+									</tr>
+								</thead>
+								<tbody>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+							</div>
+						<div class="tab-pane fade" id="isSearchInfo">
+						<div class="container">
+							<span class="glyphicon glyphicon-font"  style="font-size: 30px;">
+								<div style="float: right;">&nbsp;&nbsp;&nbsp;：专业信息</div>
+							</span>
+							<div style="background: white; height: 13px;"></div>
+							<table class="table table-bordered" style="width: 90%; margin: 0 auto; font-size: 17px;" id="is-major">
+								<thead>
+									<tr>
+										<td>专业</td>
+										<td>信息安全</td>
+										<td>GPA</td>
+										<td>3.3</td>
+									</tr>
+									<tr>
+										<td>挂科门次</td>
+										<td>110</td>
+										<td>挂科率</td>
+										<td>0.3</td>
+									</tr>
+									<tr>
+										<td>竞赛人次</td>
+										<td>20</td>
+										<td>项目人次</td>
+										<td>40</td>
+									</tr>
+								</thead>
+							</table>
+							<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 30px; "></div>
+								<div class="col-md-12" style="padding: 0; margin-top: 0px; margin-bottom: 10px;">
+									<span class="glyphicon glyphicon-bold"  style="font-size: 30px; margin-top: 20px;">
+										<div style="float: right;">&nbsp;&nbsp;&nbsp;：各班成绩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<button class="btn btn-primary" onclick="ExportIs();">下载成绩单</button>
+										</div>
+									</span>
+								</div>
+							<table id="is-scores" class="table table-bordered" style="width: 90%; margin: 0 auto;" tableexport-key="classScore">
+								<thead>
+									<tr>
+										<th>班级</th>
+										<th>班长</th>
+										<th>GPA</th>
+										<th>挂科门次</th>
+										<th>挂科率</th>
+									</tr>
+								</thead>
+								<tbody>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+									</tr>
+										<td>1</td>
+										<td>Anna</td>
+										<td>aa</td>
+										<td>aa</td>
+										<td>aa</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+							</div>
+					<div class="tab-pane fade" id="loginStudentInfo">
+						<div class="container">
+							<div style="margin-bottom:10px; margin-left:20px; font-size: 25px;">学生信息录入：</div>
+						</div>
+						<form>
+							<input type="file" class="file" allowedFileTypes='xlsx'>
+						</form>
+						
+						
+					</div>
+					<div class="tab-pane fade" id="loginScoreInfo">
+						<div class="container">
+							<div style="margin-bottom:10px; margin-left:20px; font-size: 25px;">学生成绩录入：</div>
+						</div>
+						<form>
+							<input type="file" class="file" data-allowed-file-extensions='["xlsx"]' previewFileType='["xlsx"]' id="studentscore">
+						</form>
+						
+						
+					</div>
+				</div>
+			</div>
+		
+		
+		
+		
+		
+
+		<!--底部效果-->
+		<div class="sign-up-down">
+			<h4 style="line-height: 50px;">Copyright ©️ 2018 - Java & Java Web培训 </h4>
+		</div>
+		<script>
+		</script>
+	</body>
+</html>
+
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<style>
+		*{
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+		}
+		.mycontainer{
+			margin-top: 20px;
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: 80px;
+			margin-left: 80px;
+			height: auto;
+		}
+		.col-md-3{
+			font-size: 17px;
+			text-indent: 2em;
+			line-height: 35px;
+		}
+		
+		.pp{
+			font-size: 25px;
+			margin-left: 0px;
+			text-indent: 2em;
+			line-height: 35px;
+		}
+		.row{
+			margin-bottom: 10px;
+		}
+		th{
+			width: 300px;
+			font-size: 20px;
+			text-align: center;
+			height: 40px;
+		}
+		table{
+			margin-left: 100px;
+		}
+		.glyphicon-download-alt, .glyphicon-file{
+			font-size: 15px;
+		}
+	</style>
+	<body>
+		<div class="mycontainer">
+			<div>
+				<span class="glyphicon glyphicon-folder-open"  style="font-size: 30px;">
+					<div style="float: right;">&nbsp;&nbsp;&nbsp;${folder.folderName}</div>
+				</span>
+				<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 10px; margin-bottom: 10px;"></div>
+				
+				<div class="container" style="margin: 0px;">
+					<p class="pp">数据文件：</p>
+					<table border="1px" cellpadding="10px" cellspacing="10px">
+						<tr>
+							<th>数据</th>
+							<th>查看</th>
+							<th>下载</th>
+						</tr>
+						<tr>
+							<th>${folder.fileName1}</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-file"></div>
+								</a>
+							</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-download-alt"></div>
+								</a>
+							</th>
+						</tr>
+						<tr>
+							<th>${folder.fileName2}</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-file"></div>
+								</a>
+							</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-download-alt"></div>
+								</a>
+							</th>
+						</tr>
+						<tr>
+							<th>${folder.fileName3}</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-file"></div>
+								</a>
+							</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-download-alt"></div>
+								</a>
+							</th>
+						</tr>
+						<tr>
+							<th>${folder.fileName3}</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-file"></div>
+								</a>
+							</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-download-alt"></div>
+								</a>
+							</th>
+						</tr>
+					</table>
+				</div>
+				<div class="container" style="margin-top: 15px;">
+					<p class="pp">处理结果：</p>
+					<table border="1px" cellpadding="10px" cellspacing="10px">
+						<tr>
+							<th>数据</th>
+							<th>查看</th>
+							<th>下载</th>
+						</tr>
+						<tr>
+							<th>${folder.resultFile}</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-file"></div>
+								</a>
+							</th>
+							<th>
+								<a href="">
+									<div class="glyphicon glyphicon-download-alt"></div>
+								</a>
+							</th>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

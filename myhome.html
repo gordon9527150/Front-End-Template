@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Sharing Your Story</title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+	</head>
+	<style>
+		*{
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+		}
+		.mycontainer{
+			margin-top: 20px;
+			padding-right: 5px;
+			padding-left: 5px;
+			margin-right: 10px;
+			margin-left: 10px;
+			height: auto;
+		}
+		.pp{
+			font-size: 20px;
+			margin-left: 20px;
+			text-indent: 2em;
+			line-height: 35px;
+		}
+		input[type=file]{
+			display: inline;
+			margin-top: 5px;
+		}
+		th, td{
+			width: 200px;
+			text-align: center;
+			background-color: black;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		
+		var count = 1;
+		function sendFilesNum(){
+			var value = document.getElementById("fileNum").value;
+			if(isNaN(value)||value > 5||value < 1){
+				document.getElementById("fileNumError").innerHTML="一次上传的文件数量为[1, 5]";
+				return false;
+			}
+			for(var i = 2; i <= count; i++){
+				$("#dfile"+i).remove();
+			}
+			var ele = document.getElementById("files");
+			for(var i = 2; i <= value; i++)
+			{
+				$("#files").before("<div id='dfile"+i+"'>file"+i+"： <input type='file' id = 'file"+i+"' name='file"+i+"' /></div>");
+			}
+			count = value;
+			return true;
+		}
+		function deleteMsg(){
+			document.getElementById("msg").remove();
+		}
+	</script>
+	<body>
+		<div class="container" style="margin-top: 10px; font-size: 20px;">
+	
+			<div id="msg" style="background-color: #C0C0C0; height: 60px; width: 100%; line-height: 60px; border-radius: 10px; margin-top:10px; margin-bottom: 10px;">
+				<div class="container">
+					<div class="row">
+						<div class="" style="text-align: center;">公告：</div>
+						<div class="col-md-8" style="text-align: left;">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+						<div class="col-md-1" style="text-align: right;">
+							<button onclick = "deleteMsg()" 
+								 style="border:0px;background-color:transparent;">
+								<div class="glyphicon glyphicon-remove"></div>
+							</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="row">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="active">
+						<a href="#toUpload" data-toggle="tab">我要上传</a>
+					</li>
+					<li>
+						<a href="#uploadRecord" data-toggle="tab">上传记录</a>
+					</li>
+					<li>
+						<a href="#downloadRecord" data-toggle="tab">下载记录</a>
+					</li>
+					<li>
+						<a href="#postMsg" data-toggle="tab">发布留言</a>
+					</li>
+					<li>
+						<a target="_blank" href="轮播图.html">资源下载</a>
+					</li>
+				</ul>
+				<div id="myTabContent" class="tab-content" style="margin-top: 20px;line-height: 2;">
+					<div class="tab-pane fade in active" id="toUpload">
+						
+						<div class="mycontainer">
+							<div>
+								<span class="glyphicon glyphicon-upload"  style="font-size: 30px;">
+									<div style="float: right;">&nbsp;&nbsp;&nbsp;文件上传</div>
+								</span>
+								<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 10px; margin-bottom: 10px;"></div>
+								
+								<!-- 文件个数 -->
+								<div class="panel-body">
+									<form action="#" method='post' onsubmit="return false">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-offset-1 col-md-3">
+													<div class="form-group">
+														<div class="input-group input-group-lg">
+															<span class="input-group-addon">
+																<span class='glyphicon glyphicon-list'></span>
+															</span>
+															<input type="text" name="fileNum" class='form-control'
+																placeholder='文件个数' id='fileNum' />
+														</div>
+													</div>
+												</div>
+												<div class="col-md-offset-1 col-md-3">
+													<div class="form-group ok" style="text-align: center;">
+														<input style="width: 100%;" type="submit" value="提交" onclick = "sendFilesNum()" class='btn btn-primary btn-lg'>
+													</div>
+												</div>
+												<div class="col-md-offset-1 col-md-3">
+													<h4 class="error" id="fileNumError" style="margin-top:33.5px;">数量合理&nbsp;!</h4>
+												</div>
+											</div>
+										</div>						
+									</form>
+								</div>
+								
+								<!-- 文件上传表单 -->
+								<span class="glyphicon glyphicon-bold"  style="font-size: 30px;">
+									<div style="float: right;">&nbsp;&nbsp;&nbsp;：文件上传</div>
+								</span>
+								<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 10px; margin-bottom: 10px;"></div>
+								<form action="${pageContext.request.contextPath}/folderServlet?method=upload" method="post" 
+									enctype="multipart/form-data" onsubmit="return checkForm()">
+									<div class="col-md-offset-3 col-md-6">
+										<div>
+											file1：  <input type="file" id="file1" name="file1"/>
+										</div>
+										
+										<div id="files"></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="uploadRecord">
+						<table border="1px" cellpadding="1px" style="margin: 0 auto;">
+							<tr>
+								<th>文件名称</th>
+								<th>上传时间</th>
+								<th>删除文件</th>
+								<th>删除记录</th>
+								<th>文件状态</th>
+							</tr>
+						</table>
+					</div>
+					<div class="tab-pane fade" id="downloadRecord">
+						<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+							TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+					</div>
+					<div class="tab-pane fade" id="postMsg">
+						<p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
+							TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.css" />
+		<script src="public/js/jquery-3.2.1.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/holder.min.js"></script>
+		<link rel="stylesheet" href="public/css/style.css" />
+		<link href="public/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="public/bootstrap/js/bootstrap-select.js"></script>
+		<link rel="stylesheet" type="text/css" href=e"easyui/themes/default/easyui.css"/>
+		<script src="easyui/jquery.easyui.min.js"></script>
+	</head>
+	<script type="text/javascript">
+		function getInfo(){
+			alert();
+			window.location.href="http://www.baidu.com";
+		}
+	</script>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+	</style>
+	<body>
+		<div class="sign-up-top">
+			<div class="container" style="margin-top: 10px; margin-left: 50px;">
+				<div style="vertical-align:middle; font-size:28px;">
+					<div style="float:left">
+						<a href="#" style="text-decoration: none;">
+							<img src="holder.js/60x60" style="vertical-align:middle; height: 56px;border-radius: 50%;"/>
+							&nbsp;&nbsp;&nbsp;<span style="letter-spacing: 2px;">社团管理系统</span>
+						</a>
+					</div>
+					<div id="logreg">
+						<h4><a href="#">登录</a>
+							&nbsp;&nbsp;&nbsp;<a href="注册模板.html">注册</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 10px;">
+			<div class="col-md-3" style="margin-top: 0px;">
+				<span style="font-size: 40px; text-align: center;"><i>社团管理主页&nbsp;</i></span>
+			</div>
+			
+			<div class="container" style="margin: 0px;">
+				<div class="col-md-9" style="margin-top: 7px;  font-size: 20px;">
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="in active">
+							<a href="#toLearn" data-toggle="tab" id="toLearna">公告管理</a>
+						</li><li>
+							<a href="#toPlay" data-toggle="tab" id="toPlaya" onclick="getInfo();">信息维护</a>
+						</li><li>
+							<a href="#toIde" data-toggle="tab" id="toIdea">部门管理</a>
+						</li><li>
+							<a href="#toOffice" data-toggle="tab" id="toOfficea">交流活动</a>
+						</li><li>
+							<a href="#toOffice" data-toggle="tab" id="toOfficea">审核会长</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+				<div id="myTabContent" class="tab-content" style="margin-top: 0px;line-height: 2;">
+					<div class="tab-pane fade in active" id="toLearn">
+						<span id="sp2">           
+							<fieldset id="i12" class="c7">
+					                <%ArrayList tt=(ArrayList)request.getAttribute("aa");String qq="";%>
+						            <%
+							        	if(tt!=null)
+							            {
+							                for(int i=0;i<tt.size();i++)
+							                {
+							                    qq=(String)tt.get(i); 
+						                %>
+				             		<a href="somanagement/yhdenglu.jsp"><%=qq%></a><br>
+				              <%} 
+				              }%>
+				             </fieldset>
+						</span>
+					</div>
+					<div class="tab-pane fade" id="toPlay">
+						
+						<div class="container"
+							style="width: 100%; background: white">
+							<div class="row">
+								<div class="col-lg-offset-1 col-lg-10"
+									style="background: #fff; padding-top: 20px; margin-top: 30px; border: 7px solid #ccc;">
+									<form class="form-horizontal" style="margin-top: 5px;font-size: 16px;">
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">学校代码</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入学校代码...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">社团编号</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入社团编号...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">社名</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入社名...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">主题</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入主题...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">属性</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入属性...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">成员容量</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入成员容量...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">职工号</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入职工号...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">姓名</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入姓名...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">学院</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入学院...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">办公地点</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入办公地点...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">联系电话</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入联系电话...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">密码</div>
+											<div class="col-sm-6">
+												<input type="text" class="form-control"	placeholder="请输入密码...">
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-3" style="text-align: right;">社团简介</div>
+											<div class="col-sm-6">
+												<textarea id="msg" class="form-control" rows="3" style="font-size:20px;"></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-4 col-sm-3">
+												<button class="btn btn-primary" type="submit">保存</button>
+											</div>
+											<div class="col-sm-offset-0 col-sm-3">
+												<button class="btn btn-danger">取消</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="tab-pane fade" id="toIde" >
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-5">
+									<div class="glyphicon glyphicon-font" style="font-size: 30px;margin-top: 20px;padding: 0px;">
+										<div style="float: right; font-size: 30px;">&nbsp;：部门添加</div>
+									</div>
+									<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 10px; margin-bottom: 10px;"></div>
+									<select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="搜索" data-actions-box="true">
+								　　　　<option selected>竞赛部...</option>
+								　　　　<option>项目部...</option>
+								　　　　<option>培训部...</option>
+								　　　　<option>宣传部...</option>
+								　　　　<option>技术部...</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<button class="btn btn-primary" type="submit">增加</button>
+								</div>
+								<div class="col-lg-offset-2 col-lg-5">
+									<div class="glyphicon glyphicon-bold"  style="font-size: 30px;margin-top: 20px;padding: 0px;">
+										<div style="float: right; font-size: 30px;">&nbsp;：部门删除</div>
+									</div>
+									<div style="background-color: #e4e4e4; height: 2px; margin-left: -10px; margin-right: -10px; margin-top: 10px; margin-bottom: 10px;"></div>
+									<select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="搜索" data-actions-box="true">
+									　　<option selected>竞赛部...</option>
+								　　　　<option>项目部...</option>
+								　　　　<option>培训部...</option>
+								　　　　<option>宣传部...</option>
+								　　　　<option>技术部...</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<button class="btn btn-danger" type="submit">删除</button>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="tab-pane fade" id="toOffice">
+						linuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinuxlinux
+					</div>
+				</div>
+			</div>
+			
+		
+		<div class="sign-up-down">
+			<h4 style="line-height: 50px;">Copyright ©️ 2018 - Computer College</h4>
+		</div>
+	</body>
+</html>

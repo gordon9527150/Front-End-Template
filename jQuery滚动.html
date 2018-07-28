@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="public/js/jquery-3.2.1.js"></script>
+        <style type="text/css">
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+             
+            body {
+                position: relative;
+                width: 100%;
+            }
+             
+            div#fixd {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 100px;
+                width: 100%;
+                background: red;
+                z-index: 10;
+            }
+             
+            div#main {
+                z-index: 1;
+                width: 100%;
+                height: 2000px;
+                background: green;
+            }
+        </style>
+        <script type="text/javascript">
+            $(function() {
+                function scroll(fn) {
+                    var beforeScrollTop = document.body.scrollTop,
+                    fn = fn || function() {};
+                    window.addEventListener("scroll", function() {
+                        var afterScrollTop = document.body.scrollTop,
+                            delta = afterScrollTop - beforeScrollTop;
+                        if(delta === 0) return false;
+                        fn(delta > 0 ? "down" : "up");
+                        beforeScrollTop = afterScrollTop;
+                    }, false);
+                }
+                scroll(function(direction) {
+                    if(direction=="down"){
+                        $("#fixd").hide();
+                    }else{
+                        $("#fixd").show();
+                    }
+                     
+                });
+            });
+        </script>
+    </head>
+ 
+    <body>
+        <div id="fixd">
+ 
+        </div>
+        <div style="height: 100px;
+                width: 100%;background: green;">
+ 
+        </div>
+        <div id="main">
+            aaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+    </body>
+ 
+</html>

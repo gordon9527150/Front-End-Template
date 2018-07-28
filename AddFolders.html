@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<style>
+		caption{
+			text-align: center;
+			font-size: 30px;
+		}
+		th{
+			text-align: center;
+			font-size: 20px;
+			width: 250px;
+			height: 40px;
+		}
+		table{
+			width: 700px;
+			margin: 0 auto;
+		}
+		td{
+			height: 250px;
+			width: 250px;
+			font-size: 13px;
+		}
+		.col-lg-6,td ,tr, th{
+			border-radius:10px;
+		}
+		input[type=file]{
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function checkForm(){
+			var valueFolder = document.getElementById("folderName").value;
+			var valuefile1 = document.getElementById("fileName1").value;
+			var valuefile2 = document.getElementById("fileName2").value;
+			var valuefile3 = document.getElementById("fileName3").value;
+			var valuefile4 = document.getElementById("fileName4").value;
+			alert(valuefile1);
+			alert(valuefile2);
+			alert(valuefile3);
+			alert(valuefile4);
+			var flag = (valueFolder!="")&&(valueFolder!="")&&(valuefile2!="")&&(valuefile3!="")&&(valuefile4!="");
+			if(flag){
+				return true;
+			}
+			alert("文件夹名称为空或文件上传数量不够！")
+			return false
+		}
+	</script>
+	<body>
+		<div class="container">
+			<form action="#" method="post" onsubmit="return checkForm()" enctype="multipart/form-data">
+				<div class="col-lg-offset-2 col-lg-8" style="background: yellow;" >
+					<table border="1px" cellspacing="100px" cellpadding="10px"> 
+						<caption>添加文件</caption>
+						<tr style="background-color: red;">
+							<th>文件夹名称</th>
+							<th>文件名称</th>
+						</tr>
+						<tr style="background-color: green;">
+							<td>
+								<div style="font-size: 17px; text-align: center;">文件夹名称：</div>
+								<center>
+									<input type="text" name="folderName" id="folderName" />
+								</center>
+							</td>
+							<td>
+								<center>
+									<input type="file" name="fileName1" id="fileName1"/>
+									<input type="file" name="fileName2" id="fileName2"/>
+									<input type="file" name="fileName3" id="fileName3"/>
+									<input type="file" name="fileName4" id="fileName4"/>
+								</center>
+							</td>
+						</tr>
+					</table>
+					<center>
+						<input type="submit" name="" id="" value="添加" />
+					</center>
+				</div>
+			</form>	
+		</div>
+	</body>
+</html>

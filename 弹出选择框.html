@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Sharing Your Story</title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+	</head>
+	<style>
+		
+		
+	</style>
+	<script type="text/javascript">
+		function test(){
+			alert();
+		}
+		
+	</script>
+	<body>
+		<button class="btn btn-info btn-group-vertical" data-toggle="modal" data-target="#myModal">
+			<span style="font-size: 20px;">开始演示模态框1</span>
+		</button>
+		<button class="btn btn-info btn-group-vertical" data-toggle="modal" data-target="#myModal">
+			<span style="font-size: 20px;">开始演示模态框2</span>
+		</button>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+		            </div>
+		            <div class="modal-body">
+		            	
+		            	<select>
+		            		<option value="aaa">aaa</option>
+		            		<option value="bbb">bbb</option>
+		            	</select>
+		            	
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" onclick="test();" class="btn btn-default" data-dismiss="modal">OK</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+	</body>
+</html>

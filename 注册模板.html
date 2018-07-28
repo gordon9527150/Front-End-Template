@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Insert_Title_Here</title>
+		<link rel="Shortcut Icon" href="public/img/favicon.ico" />
+		<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css" />
+		<script src="public/js/jquery-3.2.1.min.js"></script>
+		<script src="public/bootstrap/js/bootstrap.min.js"></script>
+		<script src="public/js/holder.min.js"></script>
+		<link href="public/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+		<script src="public/bootstrap/js/bootstrap-select.js"></script>
+		<script src="public/js/myjs.js"></script>
+	</head>
+	<script type="text/javascript">
+		var form = #("#loginForm");
+		
+		form.append($("<input></input>").attr("type", "hidden").attr("name", "type").attr("value", type));
+		
+	</script>
+	<style>
+		*{
+			font-family: "微软雅黑";
+			margin: 0px;
+			padding: 0px;
+		}
+		.sign-up-top{
+		    height:65px;
+		    box-shadow:2px 3px 10px #e4e4e4;
+		    border-bottom:1px solid\9;
+		}
+		.sign-up-down{
+			width:100%;
+			background-color: #DDDDDD;
+			text-align: center;
+		    height:60px;
+		    border-radius:10px;
+		    border-top-right-radius:10px;
+		}
+		.login-title{
+			padding-left: 30%;
+		    font-size:28px;
+		    color:#337AB7;
+		    margin-top: 20px;
+		    margin-bottom: 5px;
+		}
+		.form-group{
+			margin-top: 20px;
+			position: relative;
+		}
+		.form-line-up{
+			margin: 0px;
+			padding: 0px;
+		    height:8px;
+		    background:#337AB7;
+		    width:100%;
+		    border-top-left-radius:4px;
+		    border-top-right-radius:4px
+		}
+		.row{
+			margin-right: 0px;
+ 			margin-left: 0px;
+		}
+		.panel{
+			margin-top: 30px;
+			margin-bottom: 50px;
+		}
+		.error{
+			font-size:20px;
+			color:red;
+			text-align:center;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#MyRegister").click(function(){
+				if(checkId()&checkPwd()&checkUserName()){
+					
+				}
+			});
+		});
+		
+		
+		
+		window.onload = function(){
+			$('#myModal').modal(); 
+		}
+	</script>
+	<body>
+		<!--顶部效果-->
+		<div class="sign-up-top">
+			<div class="container" style="margin-top: 10px;">
+				<div style="vertical-align:middle; font-size:28px;">
+					<a href="#" style="text-decoration: none;">
+							<img src="holder.js/60x60" style="vertical-align:middle; height: 56px; border-radius: 50%;"/>
+							Insert_Title_Here
+					</a>
+					<div style="float: right; margin-top: 10px;">
+						<h4><a href="#">登录</a>
+							&nbsp;&nbsp;&nbsp;<a href="#">注册</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--登陆标识-->
+		<div class="login-title">注册</div>
+		
+		<!--登录框-->
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<div class="form-line-up"></div>
+				<div class="row">
+					<div class="col-md-offset-1 col-md-10">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<div class="panel-title" style="text-align: center;">
+									<img style="height: 90px; border-radius: 50%;" src="holder.js/100x100" alt="">
+								</div>
+							</div>
+							<div class="panel-body">
+								<form name="denglu" method='post' onsubmit="return false" id = "mySub">
+									<div class="form-group" id="leibie">
+										<div class="input-group input-group-lg">
+											<span class="input-group-addon">
+												用户类别
+											</span>
+											<select style="width: 100px;" class="selectpicker" id="MySelect">
+										　　　　<option selected>学生</option>
+										　　　　<option>教师</option>
+										　　　　<option>辅导员</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group input-group-lg">
+											<span class="input-group-addon">
+												<span class='glyphicon glyphicon-user'></span>
+											</span>
+											<input type="text" class='form-control' placeholder='学号...' id="id"
+												onblur="checkId()" onfocus="hideError('idError')">
+										</div>
+										<div class="error" id="idError"></div>
+									</div>
+									<div class="form-group">
+										<div class="input-group input-group-lg">
+											<span class="input-group-addon">
+												<span class='glyphicon glyphicon-user'></span>
+											</span>
+											<input type="text" class='form-control' placeholder='姓名...' id="username"
+												onblur="checkUserName()" onfocus="hideError('usernameError')">
+										</div>
+										<div class="error" id="usernameError"></div>
+									</div>
+									<div class="form-group">
+										<div class="input-group input-group-lg">
+											<span class="input-group-addon">
+												<span class='glyphicon glyphicon-lock'></span>
+											</span>
+											<input type="password" class='form-control' placeholder='密码...' id="pwd" 
+												onblur="checkPwd()" onfocus="hideError('pwdError')">
+										</div>
+										<div class="error" id="pwdError"></div>
+									</div>
+									<div class="form-group ok" style="text-align: center;" id="MyRegister">
+										<input style="width: 100%;" id="sub" type="submit" value="注册" class='btn btn-primary btn-lg'>
+									</div>
+									<div class="form-group">
+										<div style="float: right; margin-right: 20px;">
+											<div style="font-size: 17px;">
+												<button type="button" class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm" style="font-size: 16px;">注册说明</button>
+												<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="myModal"
+													aria-labelledby="myLargeModalLabel">
+												 	<div class="modal-dialog" role="document">
+												    	<div class="modal-content">
+												    	  	<div class="modal-header">
+												        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												        		<h4 class="modal-title" id="myModalLabel">注册说明</h4>
+												      		</div>
+												     		<div class="modal-body">
+												     			<p style="text-indent:2em; letter-spacing: 1px; line-height: 1.5;font-size: 20px;">
+												        			为保证成绩信息的准确性，请各位同学使用真实学号和真实姓名进行注册。如果后台查到学号和姓名不一致会暂时禁用此账号，禁用后请联系QQ:2214112886。
+												     			</p>
+												     			<p style="text-indent:2em; letter-spacing: 1px; line-height: 1.5;font-size: 20px; color: red;">
+												        			我们不会泄露关于您的任何个人信息！
+												     			</p>
+												      		</div>
+												      		<div class="modal-footer">
+												        		<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+												      		</div>
+												   		</div>
+												  	</div>
+												</div>
+												&nbsp;&nbsp;<a href="注册模板.html">前往登录</a>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--底部效果-->
+		<div class="sign-up-down">
+			<h4 style="line-height: 50px;">Copyright ©️ 2018 - Java & Java Web培训 </h4>
+		</div>
+		<script>
+		</script>
+	</body>
+</html>
+
+
+
